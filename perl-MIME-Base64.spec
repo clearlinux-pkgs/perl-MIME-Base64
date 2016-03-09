@@ -4,12 +4,13 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.15
-Release  : 6
+Release  : 7
 URL      : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Summary  : 'The RFC 2045 encodings; base64 and quoted-printable'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-MIME-Base64-lib
 Requires: perl-MIME-Base64-doc
 
 %description
@@ -23,6 +24,14 @@ Group: Documentation
 
 %description doc
 doc components for the perl-MIME-Base64 package.
+
+
+%package lib
+Summary: lib components for the perl-MIME-Base64 package.
+Group: Libraries
+
+%description lib
+lib components for the perl-MIME-Base64 package.
 
 
 %prep
@@ -40,7 +49,7 @@ fi
 %check
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=intel.com,localhost
+export no_proxy=localhost
 make TEST_VERBOSE=1 test
 
 %install
@@ -59,8 +68,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %defattr(-,root,root,-)
 /usr/lib/perl5/site_perl/5.22.0/x86_64-linux/MIME/Base64.pm
 /usr/lib/perl5/site_perl/5.22.0/x86_64-linux/MIME/QuotedPrint.pm
-/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/auto/MIME/Base64/Base64.so
 
 %files doc
 %defattr(-,root,root,-)
-%doc /usr/share/man/man3/*
+%exclude /usr/share/man/man3/MIME::Base64.3
+%exclude /usr/share/man/man3/MIME::QuotedPrint.3
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib/perl5/site_perl/5.22.0/x86_64-linux/auto/MIME/Base64/Base64.so
