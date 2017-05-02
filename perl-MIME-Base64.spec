@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.15
-Release  : 11
+Release  : 12
 URL      : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Summary  : 'The RFC 2045 encodings; base64 and quoted-printable'
