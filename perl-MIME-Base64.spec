@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.15
-Release  : 12
+Release  : 13
 URL      : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Summary  : 'The RFC 2045 encodings; base64 and quoted-printable'
@@ -38,6 +38,9 @@ lib components for the perl-MIME-Base64 package.
 %setup -q -n MIME-Base64-3.15
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
@@ -51,7 +54,7 @@ fi
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test
 
 %install
@@ -68,8 +71,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/x86_64-linux-thread-multi/MIME/Base64.pm
-/usr/lib/perl5/site_perl/5.24.0/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
+/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/MIME/Base64.pm
+/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
 
 %files doc
 %defattr(-,root,root,-)
@@ -78,4 +81,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
+/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
