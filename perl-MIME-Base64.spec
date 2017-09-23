@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.15
-Release  : 13
+Release  : 14
 URL      : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Summary  : 'The RFC 2045 encodings; base64 and quoted-printable'
@@ -71,8 +71,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/MIME/Base64.pm
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/MIME/Base64.pm
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
 
 %files doc
 %defattr(-,root,root,-)
@@ -81,4 +81,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
+/usr/lib/perl5/site_perl/5.26.1/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
