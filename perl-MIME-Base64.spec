@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.15
-Release  : 23
+Release  : 24
 URL      : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Summary  : 'The RFC 2045 encodings; base64 and quoted-printable'
@@ -23,6 +23,7 @@ Summary: dev components for the perl-MIME-Base64 package.
 Group: Development
 Requires: perl-MIME-Base64-lib = %{version}-%{release}
 Provides: perl-MIME-Base64-devel = %{version}-%{release}
+Requires: perl-MIME-Base64 = %{version}-%{release}
 
 %description dev
 dev components for the perl-MIME-Base64 package.
