@@ -4,13 +4,13 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.15
-Release  : 25
+Release  : 26
 URL      : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Summary  : 'The RFC 2045 encodings; base64 and quoted-printable'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-MIME-Base64-lib = %{version}-%{release}
+Requires: perl-MIME-Base64-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -18,33 +18,24 @@ This package contains a base64 encoder/decoder and a quoted-printable
 encoder/decoder.  These encoding methods are specified in RFC 2045 -
 MIME (Multipurpose Internet Mail Extensions).
 
-%package dev
-Summary: dev components for the perl-MIME-Base64 package.
-Group: Development
-Requires: perl-MIME-Base64-lib = %{version}-%{release}
-Provides: perl-MIME-Base64-devel = %{version}-%{release}
+%package perl
+Summary: perl components for the perl-MIME-Base64 package.
+Group: Default
 Requires: perl-MIME-Base64 = %{version}-%{release}
 
-%description dev
-dev components for the perl-MIME-Base64 package.
-
-
-%package lib
-Summary: lib components for the perl-MIME-Base64 package.
-Group: Libraries
-
-%description lib
-lib components for the perl-MIME-Base64 package.
+%description perl
+perl components for the perl-MIME-Base64 package.
 
 
 %prep
 %setup -q -n MIME-Base64-3.15
+cd %{_builddir}/MIME-Base64-3.15
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -54,7 +45,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -71,17 +62,15 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+## Remove excluded files
+rm -f %{buildroot}/usr/share/man/man3/MIME::QuotedPrint.3
+rm -f %{buildroot}/usr/share/man/man3/MIME::Base64.3
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/MIME/Base64.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
 
-%files dev
+%files perl
 %defattr(-,root,root,-)
-%exclude /usr/share/man/man3/MIME::Base64.3
-%exclude /usr/share/man/man3/MIME::QuotedPrint.3
-
-%files lib
-%defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/MIME/Base64.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
