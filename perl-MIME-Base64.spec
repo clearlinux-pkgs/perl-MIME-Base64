@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.15
-Release  : 26
+Release  : 27
 URL      : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz
 Summary  : 'The RFC 2045 encodings; base64 and quoted-printable'
@@ -71,6 +71,6 @@ rm -f %{buildroot}/usr/share/man/man3/MIME::Base64.3
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/MIME/Base64.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/MIME/Base64.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
