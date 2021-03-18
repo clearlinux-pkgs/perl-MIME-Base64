@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.16
-Release  : 29
+Release  : 30
 URL      : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/MIME-Base64-3.16.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/MIME-Base64-3.16.tar.gz
 Summary  : 'Encoding and decoding of base64 strings'
@@ -72,6 +72,6 @@ rm -f %{buildroot}/usr/share/man/man3/MIME::Base64.3
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/MIME/Base64.pm
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
-/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/MIME/Base64.pm
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
+/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
