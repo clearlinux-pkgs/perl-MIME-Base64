@@ -4,7 +4,7 @@
 #
 Name     : perl-MIME-Base64
 Version  : 3.16
-Release  : 31
+Release  : 32
 URL      : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/MIME-Base64-3.16.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/MIME-Base64-3.16.tar.gz
 Summary  : 'Encoding and decoding of base64 strings'
