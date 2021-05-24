@@ -72,6 +72,6 @@ rm -f %{buildroot}/usr/share/man/man3/MIME::Base64.3
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/MIME/Base64.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
-/usr/lib/perl5/vendor_perl/5.32.1/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/MIME/Base64.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/MIME/QuotedPrint.pm
+/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/MIME/Base64/Base64.so
